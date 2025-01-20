@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Test';
+    src: url('./resources/Fonts/Montserrat-Bold.woff2');
+  }
+
+.estilo-titulo{
+    font-family: 'Test', sans-serif; /* Usa la fuente 'Test' y si no está disponible, usa una fuente sans-serif de reserva */
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.estilo-titulo-solo{
+    font-family: 'Test', sans-serif; /* Usa la fuente 'Test' y si no está disponible, usa una fuente sans-serif de reserva */
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}

@@ -1,0 +1,109 @@
+body{
+    background-color: #292929;
+}
+
+section{
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: #fff 1px solid;
+    padding: 1rem;
+}
+
+/* @media (width > 400px){
+    section{
+    }
+    nav{
+        flex-direction: column;
+    }
+} */
+
+nav{
+    z-index: 999;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a::before{
+    position: absolute;
+    content: "";
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: #fff dashed 2px;
+    border-radius: 100%;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+
+nav a::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+
+    z-index: -1;
+    transition: 0.3s all ease-in-out;
+}
+
+nav a:hover::before{
+    opacity: 1;
+    animation: ani 5s infinite linear;
+}
+
+nav a.android::after{
+    background-color: #07581b;
+}
+
+nav a.ios::after{
+    background-color: #000000;
+}
+
+nav a:hover::after{
+    opacity: 0;
+    transform: scale(3);
+}
+
+nav a{
+    width: 60px;
+    height: 60px;
+    border: #fff solid 2px;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+nav a:hover svg{
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+nav a svg{
+    width: 30px;
+    height: 30px;
+    transition: 0.3s all ease-in-out;
+}
+
+nav a svg circle, nav a svg path{
+    fill: #fff;
+}
+
+@keyframes ani{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
