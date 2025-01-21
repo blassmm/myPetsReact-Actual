@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <footer>
+    <footer className="relative z-99">
       {/* {isMobile ? (
         <FooterViewMobile {...icons} LogoImage={LogoImage} />
       ) : (

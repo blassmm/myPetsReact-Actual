@@ -28,7 +28,7 @@ const Section3 = () => {
   });
 
   return (
-    <div className="relative h-[65vh] w-full mt-6 bg-white">
+    <div className="relative h-[65vh] w-full mt-6 mb-10 bg-white">
       <div className="bg-[#FDA51E] absolute top-20 w-full h-[65vh]">
 
       </div>

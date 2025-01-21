@@ -50,7 +50,7 @@ function App() {
             <GridTest2 />
           </div> */}
 
-          <Footer />
+          <Footer/>
         </div>
       </div>
     </>
