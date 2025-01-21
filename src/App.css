@@ -46,10 +46,7 @@
 .section-1{
   /* border: red 4px solid; */
 
-  min-height: 80vh;
-  min-height: 80dvh;
 
-  background: linear-gradient(0deg, #ffde5b 0%, rgba(246, 153, 37, 1) 100%);
-
+  background: linear-gradient(0deg, #f7af2b 0%, rgba(246, 153, 37, 1) 100%);
   position: relative;
 }

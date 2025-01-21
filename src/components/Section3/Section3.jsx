@@ -40,7 +40,7 @@ const Section3 = () => {
         <h2 className="text-3xl">Reencuentros</h2>
       </div>
 
-      <div className="bg-white mt-10 w-[250px] rounded-xl  text-black relative mx-auto">
+      <div className="bg-white mt-10 w-[250px] rounded-xl relative mx-auto">
         <h1 className="estilo-titulo-solo text-[#FBBE42] sm:text-[30px] text-[9vw] py-4 leading-[30px] text-center">
           Marcas que nos acompañan
         </h1>
