@@ -12,7 +12,7 @@ const Section1 = () => {
       
 
       <div className="text-center py-2">
-        <img src={Logo} alt="Logo" className="block mx-auto" />
+        <img src={Logo} alt="Logo" className="mx-auto mb-10" />
       </div>
 
       <div className="flex items-center justify-center">
@@ -85,7 +85,7 @@ const Section1 = () => {
         </a>
       </div>
 
-      <div className="text-center space-y-4 relative z-2 pb-[20rem]">
+      <div className="mt-20 text-center space-y-4 relative z-2 pb-[20rem]">
         <img src={Icon2} alt="icon" className="block mx-auto w-[80px]" />
         <h2 className="estilo-titulo">Gratuita</h2>
         <img src={Icon2} alt="icon" className="block mx-auto w-[80px]" />
