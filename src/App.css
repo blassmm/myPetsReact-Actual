@@ -50,3 +50,22 @@
   background: linear-gradient(0deg, #f7af2b 0%, rgba(246, 153, 37, 1) 100%);
   position: relative;
 }
+
+@keyframes show {
+	from {
+		opacity: 0;
+		scale: 10%
+	}
+	to {
+		opacity: 1;
+		scale: 100%
+	}
+}
+
+.elemento-animado{
+    view-timeline-name: --reveal;
+	animation-name: show;
+	animation-fill-mode: both;
+	animation-timeline: --reveal;
+	animation-range: entry 1% cover 40%;
+}

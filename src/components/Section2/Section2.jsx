@@ -7,10 +7,10 @@ import FotoFede from "../../resources/foto-nota.png";
 
 const Section2 = () => {
   return (
-    <div className="relative w-full mx-auto flex flex-col items-center justify-center gap-2">
+    <div className="relative w-full mx-auto flex flex-col items-center justify-center">
       <img src={Iphone} alt="iphone" className="mx-auto pb-9" />
 
-      <div className="text-center space-y-4 text-black">
+      <div className="elemento-animado text-center space-y-4 text-black">
         <img src={Icon1} alt="icon" className="block mx-auto w-[80px]" />
         <h2 className="estilo-titulo text-black">Geolocalización</h2>
         <p>

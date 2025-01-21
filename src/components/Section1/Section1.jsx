@@ -11,16 +11,16 @@ const Section1 = () => {
     <>
       
 
-      <div className="text-center py-2">
-        <img src={Logo} alt="Logo" className="mx-auto mb-10" />
+      <div className="elemento-animado text-center py-2">
+        <img src={Logo} alt="Logo" className="elemento-animado mx-auto mb-10" />
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="elemento-animado flex items-center justify-center">
         <div className="cat-img">
-          <img src={Cat} alt="Logo" className="logo" />
+          <img src={Cat} alt="Logo" className="logo elemento-animado" />
         </div>
         <div className="dog-img">
-          <img src={Dog} alt="Logo" className="logo" />
+          <img src={Dog} alt="Logo" className="logo elemento-animado" />
         </div>
       </div>
 
@@ -85,10 +85,10 @@ const Section1 = () => {
         </a>
       </div>
 
-      <div className="mt-20 text-center space-y-4 relative z-2 pb-[10rem]">
-        <img src={Icon2} alt="icon" className="block mx-auto w-[80px]" />
-        <h2 className="estilo-titulo">Gratuita</h2>
-        <img src={Icon2} alt="icon" className="block mx-auto w-[80px]" />
+      <div className="elemento-animado mt-20 text-center space-y-4 relative z-2 pb-[10rem]">
+        <img src={Icon2} alt="icon" className="elemento-animado mx-auto w-[80px] " />
+        <h2 className="estilo-titulo ">Gratuita</h2>
+        <img src={Icon2} alt="icon" className="mx-auto w-[80px]" />
         <h2 className="estilo-titulo">Funciona en todo el pais</h2>
         <img
           src={Icon4}
