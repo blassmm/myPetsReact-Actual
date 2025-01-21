@@ -27,12 +27,13 @@ const Footer = () => {
 
   return (
     <footer>
-      {isMobile ? (
+      {/* {isMobile ? (
         <FooterViewMobile {...icons} LogoImage={LogoImage} />
       ) : (
         <FooterViewResponsive {...icons} LogoImage={LogoImage} />
-      )}
+      )} */}
 
+      <FooterViewMobile {...icons} LogoImage={LogoImage} />
       <hr />
       <p className="copyright">
         © {new Date().getFullYear()} My Pets. All rights reserved.

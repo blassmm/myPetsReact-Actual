@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scrollbar-color: orange white;
 }
 
 @font-face {
@@ -39,6 +40,7 @@
 .wrapper {
   z-index: 12;
   background: white;
+  
 }
 
 .section-1{
@@ -50,8 +52,4 @@
   background: linear-gradient(0deg, #ffde5b 0%, rgba(246, 153, 37, 1) 100%);
 
   position: relative;
-}
-
-.section-2{
-  /* border: green 4px solid; */
 }

@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import { useScramble } from 'use-scramble';
 
 import Sponsor1 from "../../resources/sponsors/logo1.png";
 import Sponsor2 from "../../resources/sponsors/logo2.png";
@@ -12,16 +13,30 @@ import bgVector from "../../resources/bg-vector.png";
 import ClickIcon from "../../resources/click-icon.png";
 
 const Section3 = () => {
+
+  const { ref } = useScramble({
+    text: '+1.110',
+    speed: 0.3,
+    tick: 1,
+    step: 1,
+    scramble: 5,
+    seed: 1,
+    chance: 1,
+    overdrive: false,
+    overflow: true,
+    range: [48, 53, 56],
+  });
+
   return (
-    <div className="relative h-[100vh] w-full mt-6 bg-white">
-      <div className="bg-[#FDA51E] absolute top-20 w-full h-[90vh]">
+    <div className="relative h-[65vh] w-full mt-6 bg-white">
+      <div className="bg-[#FDA51E] absolute top-20 w-full h-[65vh]">
 
       </div>
 
 
       <img src={bgVector} alt="iphone" className="w-full h-[150px] " />
       <div className="absolute top-12 left-0 w-full flex flex-col justify-center items-center text-white z-10 ">
-        <h1 className="text-6xl">1.110</h1>
+        <p ref={ref} className="text-6xl" />
         <h2 className="text-3xl">Reencuentros</h2>
       </div>
 

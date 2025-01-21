@@ -6,16 +6,10 @@ import ClickIcon from "../../resources/click-icon.png";
 import Icon2 from "../../resources/icon2.png";
 import Icon4 from "../../resources/icon4.png";
 
-import bgVector from "../../resources/bg-vector.png";
-
 const Section1 = () => {
   return (
     <>
-      <img
-        src={bgVector}
-        alt="iphone"
-        className="absolute z-1 bottom-0 left-0 w-full h-[200px] filter brightness-0 invert"
-      />
+      
 
       <div className="text-center py-2">
         <img src={Logo} alt="Logo" className="block mx-auto" />
