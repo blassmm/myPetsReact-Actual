@@ -25,10 +25,10 @@ function App() {
             <Section1 />
           </div>
 
-          <div className="">
+          <div>
             <img
               src={bgVector}
-              alt="iphone"
+              alt="background-vector"
               className="relative bottom-10 filter brightness-0 invert w-full h-[100px]"
             />
             <Section2 />
