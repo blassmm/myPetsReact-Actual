@@ -57,33 +57,58 @@ const FooterViewMobile = ({
       opacity: 0,
       y: 50,
     });
-    gsap.to(".icons-container", { //a quien aplicamos
-      opacity: 1, 
-      y: 0, 
+    gsap.to(".icons-container", {
+      //a quien aplicamos
+      opacity: 1,
+      y: 0,
       duration: 1.8,
-      ease: "bounce.out", 
+      ease: "bounce.out",
       scrollTrigger: {
         trigger: ".wrapper-minsize", //cuando se aplica el trigger
         // markers: true, //muestra hud para ver lineas
-        start: "top 80%", 
+        start: "top 80%",
         toggleActions: "play none none reverse",
         // scrub: true, //efecto
       },
     });
   });
 
-
   return (
     <div className="wrapper-minsize">
       <div className="icons-container">
-        <FontAwesomeIcon className="footer-icons" icon={faFacebook} size="3x" />
-        <FontAwesomeIcon className="footer-icons" icon={faTiktok} size="3x" />
-        <FontAwesomeIcon
-          className="footer-icons"
-          icon={faInstagram}
-          size="3x"
-        />
+        <a
+          href="#" // Aquí va el enlace que deseas
+          target="_blank" // Esto abrirá el enlace en una nueva pestaña
+          rel="noopener noreferrer" // Para mayor seguridad
+        >
+          <FontAwesomeIcon
+            className="footer-icons"
+            icon={faFacebook}
+            size="3x"
+          />
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@mypets_app?_t=8rOdHqpxvNf&_r=1" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+        >
+          <FontAwesomeIcon className="footer-icons" icon={faTiktok} size="3x" />
+        </a>
+
+        <a
+          href="https://www.instagram.com/mypetss.app?igsh=MTQxZG9zaXg0YXRldQ%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer" 
+        >
+          <FontAwesomeIcon
+            className="footer-icons"
+            icon={faInstagram}
+            size="3x"
+          />
+        </a>
       </div>
+
       <div className="container-input">
         <h3>Recibe Novedades</h3>
         <Form

@@ -42,7 +42,9 @@ const Section1 = () => {
       <div className="relative w-[12rem] mx-auto flex flex-col items-center justify-center gap-2 py-10">
         <a
           className="border-2 border-black gap-4 w-full flex justify-center items-center flex-nowrap bg-black py-2 px-2 rounded-[40px] hover:bg-transparent hover:text-black transition-all duration-300"
-          href="#"
+          href="https://play.google.com/store/apps/details?id=com.mypets.mypetsapplication&pcampaignid=web_share&pli=1"
+          target="_blank"  // Esto abrirá el enlace en una nueva pestaña
+          rel="noopener noreferrer"  // Para seguridad adicional al abrir enlaces en nueva pestaña
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +61,9 @@ const Section1 = () => {
         </a>
         <a
           className="border-2 border-black gap-4 w-full flex justify-center items-center flex-nowrap bg-black py-2 px-2 rounded-[40px] hover:bg-transparent hover:text-black transition-all duration-300"
-          href="#"
+          href="https://apps.apple.com/ar/app/my-pets/id6447811827"
+          target="_blank"  // Esto abrirá el enlace en una nueva pestaña
+          rel="noopener noreferrer"  // Para seguridad adicional al abrir enlaces en nueva pestaña
         >
           <svg
             fill="currentcolor"
