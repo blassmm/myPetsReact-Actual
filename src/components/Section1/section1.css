@@ -5,7 +5,8 @@
 
 .estilo-titulo{
     font-family: 'Test', sans-serif; /* Usa la fuente 'Test' y si no está disponible, usa una fuente sans-serif de reserva */
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-weight: 700;
     text-transform: uppercase;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -14,4 +15,9 @@
     font-family: 'Test', sans-serif; /* Usa la fuente 'Test' y si no está disponible, usa una fuente sans-serif de reserva */
     font-size: 1.2rem;
     text-transform: uppercase;
+}
+
+.estilo-titulo2{
+    font-family: 'Test', sans-serif; /* Usa la fuente 'Test' y si no está disponible, usa una fuente sans-serif de reserva */
+    font-size: 2rem;
 }

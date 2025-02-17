@@ -85,7 +85,7 @@ const Section1 = () => {
         </a>
       </div>
 
-      <div className="elemento-animado mt-20 text-center space-y-4 relative z-2 pb-[10rem]">
+      <div className="elemento-animado px-4 mt-20 text-center space-y-4 relative z-2 pb-[10rem]">
         <img src={Icon2} alt="icon" className="elemento-animado mx-auto w-[80px] " />
         <h2 className="estilo-titulo ">Gratuita</h2>
         <img src={Icon2} alt="icon" className="mx-auto w-[80px]" />
