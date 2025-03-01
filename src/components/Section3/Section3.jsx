@@ -15,7 +15,7 @@ import ClickIcon from "../../resources/click-icon.png";
 const Section3 = () => {
 
   const { ref } = useScramble({
-    text: '+1.110',
+    text: '+5.000',
     speed: 0.3,
     tick: 1,
     step: 1,

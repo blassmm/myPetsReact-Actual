@@ -32,11 +32,14 @@ const Section1 = () => {
         <h1 className="estilo-titulo-solo text-[#FBBE42] sm:text-[30px] text-[9vw] py-4 leading-[30px] text-center">
           Descarga la App
         </h1>
-        <img
+        <h1 className="text-3xl absolute top-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+          👇
+        </h1>
+        {/* <img
           src={ClickIcon}
           alt="clickIcon"
-          className="absolute h-[40px] w-[40px] top-11 right-[0.25rem]"
-        />
+          className="absolute h-[40px] w-[40px] top-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+        /> */}
       </div>
 
       <div className="relative w-[12rem] mx-auto flex flex-col items-center justify-center gap-2 py-10">

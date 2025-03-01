@@ -21,10 +21,12 @@
     "firebase": "^11.0.2",
     "gsap": "^3.12.5",
     "inquirer": "^12.3.2",
+    "lucide-react": "^0.476.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
     "styled-components": "^6.1.13",
+    "swiper": "^11.2.4",
     "three": "^0.166.1",
     "use-scramble": "^2.2.15"
   },

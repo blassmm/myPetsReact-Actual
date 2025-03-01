@@ -1,0 +1,245 @@
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .slideContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .slideImage {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    transition: all 0.5s ease;
+  }
+  
+  .slideInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    transition: transform 0.3s ease;
+    
+  }
+  
+  .slideTitle {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .slideDescription {
+    margin: 0 0 16px 0;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  .categoryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .categoryButton {
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 80px;
+  }
+  
+  .categoryButton:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .buttonURL:hover{
+    background-color: rgb(255, 0, 0);
+  }
+  
+  /* Active slide is in full color */
+  .active {
+    z-index: 5;
+    filter: brightness(1);
+  }
+  
+  .active .slideImage {
+    transform: scale(1.05);
+  }
+  
+  /* Inactive slides are grayscale */
+  .previous,
+  .next,
+  .farPrevious,
+  .farNext {
+    filter: grayscale(0.8) brightness(0.7);
+  }
+  
+  .previous {
+    z-index: 4;
+  }
+  
+  .next {
+    z-index: 4;
+  }
+  
+  .farPrevious {
+    z-index: 3;
+  }
+  
+  .farNext {
+    z-index: 3;
+  }
+  
+  /* Navigation buttons */
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .navButton:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .prevButton {
+    left: 20px;
+  }
+  
+  .nextButton {
+    right: 20px;
+  }
+  
+  .navIcon {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+  
+  /* Indicators */
+  .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .activeIndicator {
+    background-color: white;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .carouselContainer {
+      height: 400px;
+    }
+  
+    .slideTitle {
+      font-size: 1.2rem;
+    }
+  
+    .slideDescription {
+      font-size: 0.9rem;
+    }
+  
+    .navButton {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .navIcon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carouselContainer {
+      height: 300px;
+    }
+  
+    .slideTitle {
+      font-size: 1rem;
+    }
+  
+    .slideDescription {
+      font-size: 0.8rem;
+    }
+  
+    .categoryButton {
+      padding: 4px 8px;
+      font-size: 0.7rem;
+    }
+  
+    .navButton {
+      width: 36px;
+      height: 36px;
+    }
+  
+    .navIcon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  

@@ -12,16 +12,14 @@
   src: url('./resources/Fonts/Montserrat-Bold.woff2');
 }
 
-.wrapper-main{
-  /* border: blue 10px solid; */
-
+.wrapperMain{
   scroll-behavior: smooth;
 
   z-index: 10;
 }
 
 @media (min-width: 680px) {
-  .background-overlay::after {
+  .backgroundOverlay::after {
     background: url('./resources/bg.jpg');
 
     content: "";
@@ -42,10 +40,7 @@
   
 }
 
-.section-1{
-  /* border: red 4px solid; */
-
-
+.section1{
   background: linear-gradient(0deg, #f7af2b 0%, rgba(246, 153, 37, 1) 100%);
   position: relative;
 }
@@ -59,12 +54,4 @@
 		opacity: 1;
 		scale: 100%
 	}
-}
-
-.elemento-animado{
-    view-timeline-name: --reveal;
-	animation-name: show;
-	animation-fill-mode: both;
-	animation-timeline: --reveal;
-	animation-range: entry 1% cover 40%;
 }

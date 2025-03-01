@@ -1,0 +1,12 @@
+.elementoAnimado{
+    view-timeline-name: --reveal;
+	animation-name: show;
+	animation-fill-mode: both;
+	animation-timeline: --reveal;
+	animation-range: entry 1% cover 40%;
+}
+
+.estiloTitulo2{
+    font-family: 'Test', sans-serif; /* Usa la fuente 'Test' y si no está disponible, usa una fuente sans-serif de reserva */
+    font-size: 2rem;
+}

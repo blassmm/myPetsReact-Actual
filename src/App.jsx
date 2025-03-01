@@ -1,4 +1,5 @@
-import "./App.css";
+
+import styles from "./App.module.css";
 
 // import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -11,17 +12,20 @@ import Section2 from "./components/Section2/Section2";
 // import GridTest2 from "./components/GridTest2/GridTest2";
 import Section3 from "./components/Section3/Section3";
 
+import Slider from "./components/Slider/Slider.jsx"
+
+
 import bgVector from "./resources/bg-vector.png";
 
 function App() {
   return (
     <>
-      <div className="wrapper-main relative flex flex-col justify-center items-center">
-        <div className="background-overlay"></div>
+      <div className={`${styles.wrapperMain} relative flex flex-col justify-center items-center`}>
+      <div className={`${styles.backgroundOverlay}`}></div>
 
-        <div className="wrapper shadow-custom max-w-40rem w-full relative">
+        <div className={`${styles.wrapper} shadow-custom max-w-40rem w-full relative`}>
           {/* <Navbar /> */}
-          <div className="section-1">
+          <div className={`${styles.section1} `}>
             <Section1 />
           </div>
 
@@ -34,7 +38,10 @@ function App() {
             <Section2 />
           </div>
 
+          
+
           <Section3 />
+          {/* <Slider /> */}
 
           {/* <div className="h-[40vh]">
             <Canvas>
