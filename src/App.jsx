@@ -41,7 +41,7 @@ function App() {
           
 
           <Section3 />
-          {/* <Slider /> */}
+          <Slider />
 
           {/* <div className="h-[40vh]">
             <Canvas>

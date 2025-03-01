@@ -11,7 +11,7 @@ const slides = [
     description:
       "Creo una web para encontrar mascotas perdidas en los incendios de la Patagonia",
     categories: [
-      { name: "Website", url: "https://www.faceit.com/es/players/blz_xyz" }, // URL definida
+      { name: "Website", url: "https://www.instagram.com/p/DGBOePqslfI/?img_index=2" }, // URL definida
       { name: "Rescates" }, // Sin URL
       { name: "Incendio" },
     ],
@@ -23,9 +23,7 @@ const slides = [
     description:
       "Stunning sunset over the ocean with golden reflections on the water.",
     categories: [
-      { name: "Link", url: "https://www.instagram.com/p/C-tG3f9vTE6/" },
-      { name: "😁" },
-      { name: "😎" },
+      { name: "Link", url: "https://www.instagram.com/p/C-tG3f9vTE6/" }
     ],
   },
   {
@@ -138,6 +136,8 @@ export default function Slider() {
                         <a
                           key={i}
                           href={category.url}
+                          target="_blank" // Esto abre el enlace en una nueva pestaña
+                          rel="noopener noreferrer" // Para mejorar la seguridad
                           className={`${styles.categoryButton} ${styles.buttonURL}`} // Aquí agregas la clase .buttonURL
                         >
                           {category.name}
