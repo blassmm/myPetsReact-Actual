@@ -6,11 +6,11 @@ import ClickIcon from "../../resources/click-icon.png";
 import Icon2 from "../../resources/icon2.png";
 import Icon4 from "../../resources/icon4.png";
 
+import AnimatedElements from "../AnimatedElements/AnimatedElements";
+
 const Section1 = () => {
   return (
     <>
-      
-
       <div className="elemento-animado text-center py-2">
         <img src={Logo} alt="Logo" className="elemento-animado mx-auto mb-10" />
       </div>
@@ -31,10 +31,7 @@ const Section1 = () => {
       <div className="bg-white relative m-auto w-[250px] rounded-xl">
         <h1 className="estilo-titulo-solo text-[#FBBE42] sm:text-[30px] text-[9vw] py-4 leading-[30px] text-center">
           Descarga la App
-        </h1>
-        <h1 className="text-3xl absolute top-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-          👇
-        </h1>
+        </h1>      
         {/* <img
           src={ClickIcon}
           alt="clickIcon"
@@ -42,12 +39,22 @@ const Section1 = () => {
         /> */}
       </div>
 
+      <div className="flex items-center justify-center ">
+
+        <AnimatedElements
+          emoji="👇"
+          animationType="bounce"
+          scale={1.2}
+          duration={1}
+          repeat={-1}
+        /></div>
+
       <div className="relative w-[12rem] mx-auto flex flex-col items-center justify-center gap-2 py-10">
         <a
           className="border-2 border-black gap-4 w-full flex justify-center items-center flex-nowrap bg-black py-2 px-2 rounded-[40px] hover:bg-transparent hover:text-black transition-all duration-300"
           href="https://play.google.com/store/apps/details?id=com.mypets.mypetsapplication&pcampaignid=web_share&pli=1"
-          target="_blank"  // Esto abrirá el enlace en una nueva pestaña
-          rel="noopener noreferrer"  // Para seguridad adicional al abrir enlaces en nueva pestaña
+          target="_blank" // Esto abrirá el enlace en una nueva pestaña
+          rel="noopener noreferrer" // Para seguridad adicional al abrir enlaces en nueva pestaña
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,8 +72,8 @@ const Section1 = () => {
         <a
           className="border-2 border-black gap-4 w-full flex justify-center items-center flex-nowrap bg-black py-2 px-2 rounded-[40px] hover:bg-transparent hover:text-black transition-all duration-300"
           href="https://apps.apple.com/ar/app/my-pets/id6447811827"
-          target="_blank"  // Esto abrirá el enlace en una nueva pestaña
-          rel="noopener noreferrer"  // Para seguridad adicional al abrir enlaces en nueva pestaña
+          target="_blank" // Esto abrirá el enlace en una nueva pestaña
+          rel="noopener noreferrer" // Para seguridad adicional al abrir enlaces en nueva pestaña
         >
           <svg
             fill="currentcolor"
@@ -93,7 +100,11 @@ const Section1 = () => {
       </div>
 
       <div className="elemento-animado px-4 mt-20 text-center space-y-4 relative z-2 pb-[10rem]">
-        <img src={Icon2} alt="icon" className="elemento-animado mx-auto w-[80px] " />
+        <img
+          src={Icon2}
+          alt="icon"
+          className="elemento-animado mx-auto w-[80px] "
+        />
         <h2 className="estilo-titulo ">Gratuita</h2>
         <img src={Icon2} alt="icon" className="mx-auto w-[80px]" />
         <h2 className="estilo-titulo">Funciona en todo el pais</h2>
