@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 
 // import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import ScrollVideo from "./components/ScrollVideo/ScrollVideo.jsx";
 
 import Section1 from "./components/Section1/Section1";
 import Section2 from "./components/Section2/Section2";
@@ -20,6 +21,7 @@ import bgVector from "./resources/bg-vector.png";
 function App() {
   return (
     <>
+    
       <div className={`${styles.wrapperMain} relative flex flex-col justify-center items-center`}>
       <div className={`${styles.backgroundOverlay}`}></div>
 
@@ -41,7 +43,9 @@ function App() {
           
 
           <Section3 />
+          <ScrollVideo />
           {/* <Slider /> */}
+
 
           {/* <div className="h-[40vh]">
             <Canvas>

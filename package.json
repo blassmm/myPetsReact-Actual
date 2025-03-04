@@ -19,6 +19,7 @@
     "@gsap/react": "^2.1.1",
     "@react-three/fiber": "8.16",
     "firebase": "^11.0.2",
+    "framer-motion": "^12.4.9",
     "gsap": "^3.12.5",
     "inquirer": "^12.3.2",
     "lucide-react": "^0.476.0",

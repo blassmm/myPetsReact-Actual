@@ -47,7 +47,8 @@ const Section1 = () => {
           scale={1.2}
           duration={1}
           repeat={-1}
-        /></div>
+        />
+      </div>
 
       <div className="relative w-[12rem] mx-auto flex flex-col items-center justify-center gap-2 py-10">
         <a

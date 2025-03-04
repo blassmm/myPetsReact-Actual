@@ -13,7 +13,7 @@
 }
 
 .wrapperMain{
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 
   z-index: 10;
 }
