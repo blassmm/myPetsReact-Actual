@@ -1,19 +1,16 @@
-import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from 'lenis'
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 function ScrollVideo() {
   let totalImages = 86;
-
   const ref = useRef(null);
-  const [isInViewport, setIsInViewport] = useState(false);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["center end", "center start"],
-    //center del contenedor toca el end del VP = Empieza
-    //center del contenedor toca el start del VH = Termina
-  });
-
+  // Cargar las imágenes de forma perezosa
   const images = useMemo(() => {
     const loadedImages = [];
     for (let i = 1; i <= totalImages; i++) {
@@ -24,95 +21,69 @@ function ScrollVideo() {
     return loadedImages;
   }, []);
 
-  const render = useCallback(
-    (index) => {
-      if (images[index - 1]) {
-        ref.current?.getContext("2d")?.drawImage(images[index - 1], 0, 0);
-      }
-    },
-    [images]
-  );
+  const render = (index) => {
+    if (images[index - 1]) {
+      ref.current?.getContext("2d")?.drawImage(images[index - 1], 0, 0);
+    }
+  };
 
-  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, totalImages]);
-
-  useMotionValueEvent(currentIndex, "change", (latest) => {
-    render(Number(latest.toFixed()));
-  });
-
+  // Configurar Lenis para scroll suave
   useEffect(() => {
-    render(1);
-  }, [render]);
+    const lenis = new Lenis({
+      smooth: true,
+      lerp: 0.05, // Controla la velocidad del scroll
+      smoothTouch: false, // Opcional: para desactivar el scroll suave en dispositivos táctiles
+    });
 
-  // Detectar si la sección está en el viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInViewport(entry.isIntersecting);
-      },
-      { threshold: 0.1 } // Se activa cuando al menos el 100% de la sección es visible
-    );
-
-    const section = document.getElementById("slow-scroll-section");
-    if (section) {
-      observer.observe(section);
+    function raf(time) {
+      lenis.raf(time); // Hacemos el update de Lenis en cada frame
+      requestAnimationFrame(raf);
     }
 
+    requestAnimationFrame(raf);
+
     return () => {
-      if (section) {
-        observer.unobserve(section);
-      }
+      lenis.destroy(); // Limpiar Lenis cuando el componente se desmonte
     };
   }, []);
 
-  // Implementar el scroll suave solo cuando estamos en la sección deseada
+  // Configuración de ScrollTrigger con GSAP
   useEffect(() => {
-    let scrollTimeout;
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: ref.current,
+      start: "top center",  // El inicio de la animación será cuando el top del canvas toque el centro del viewport
+      end: "bottom center", // El fin de la animación será cuando el bottom del canvas toque el centro del viewport
+      scrub: 1, // Esto hace que el scroll esté sincronizado con la animación
+      onUpdate: ({ progress }) => {
+        const index = Math.min(
+          totalImages - 1,
+          Math.floor(progress * totalImages)
+        );
+        render(index + 1); // Actualiza la imagen según el progreso
+      },
+    });
 
-    const handleSmoothScroll = (e) => {
-      if (isInViewport) {
-        e.preventDefault();
-
-        const scrollDistance = e.deltaY > 0 ? 65 : -120;
-        // Se desplaza de a 50px scrolleando hacia abajo
-        // Se desplaza de a 120px scrolleando hacia arriba
-
-        const targetScrollY = window.scrollY + scrollDistance;
-
-        // Scroll suave con animación
-        scrollTimeout = setTimeout(() => {
-          window.scrollTo({
-            top: targetScrollY,
-            behavior: "smooth",
-          });
-        }, 20); // Controla el tiempo entre cada "scroll" para hacerlo gradual
-      }
-    };
-
-    window.addEventListener("wheel", handleSmoothScroll, { passive: false });
-
+    // Limpiar ScrollTrigger cuando el componente se desmonte
     return () => {
-      window.removeEventListener("wheel", handleSmoothScroll);
-      clearTimeout(scrollTimeout);
+      scrollTrigger.kill();
     };
-  }, [isInViewport]);
+  }, [images]);
 
   return (
-    <>
-    <div id="slow-scroll-section" className="bg-black w-[100%] h-[100px]">
-      lorem
-    </div>
+
       <canvas
-        
         width={1000}
-        height={1000}
+        height={714}
         ref={ref}
         style={{
-          backgroundColor: "orange",
-          maxWidth: "100%", // Para evitar desbordamientos horizontales
-          maxHeight: "100%", // Para evitar desbordamientos verticales
+          backgroundColor: "purple",
+          maxWidth: "100%",
+          maxHeight: "100%",
+          display: "flex",
+          justifyContent:"center",
+          alignItems:"center"
         }}
       />
-    </>
   );
 }
 

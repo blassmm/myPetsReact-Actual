@@ -18,6 +18,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@gsap/react": "^2.1.1",
     "@react-three/fiber": "8.16",
+    "@studio-freight/lenis": "^1.0.42",
     "firebase": "^11.0.2",
     "framer-motion": "^12.4.9",
     "gsap": "^3.12.7",
