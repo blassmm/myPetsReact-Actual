@@ -2,17 +2,21 @@ import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 function ScrollVideo() {
+  let totalImages = 86;
+
   const ref = useRef(null);
   const [isInViewport, setIsInViewport] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["center end", "start start"],
+    offset: ["center end", "center start"],
+    //center del contenedor toca el end del VP = Empieza
+    //center del contenedor toca el start del VH = Termina
   });
 
   const images = useMemo(() => {
     const loadedImages = [];
-    for (let i = 1; i <= 86; i++) {
+    for (let i = 1; i <= totalImages; i++) {
       const img = new Image();
       img.src = `/resources/videoImages/${i}.webp`;
       loadedImages.push(img);
@@ -29,7 +33,7 @@ function ScrollVideo() {
     [images]
   );
 
-  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, 86]);
+  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, totalImages]);
 
   useMotionValueEvent(currentIndex, "change", (latest) => {
     render(Number(latest.toFixed()));
@@ -45,7 +49,7 @@ function ScrollVideo() {
       ([entry]) => {
         setIsInViewport(entry.isIntersecting);
       },
-      { threshold: 0.5 } // Se activa cuando al menos el 50% de la sección es visible
+      { threshold: 0.1 } // Se activa cuando al menos el 100% de la sección es visible
     );
 
     const section = document.getElementById("slow-scroll-section");
@@ -68,8 +72,10 @@ function ScrollVideo() {
       if (isInViewport) {
         e.preventDefault();
 
-        // Evitar el desplazamiento instantáneo
-        const scrollDistance = e.deltaY > 0 ? 100 : -100; // Distancia de desplazamiento (puedes ajustarlo)
+        const scrollDistance = e.deltaY > 0 ? 65 : -120;
+        // Se desplaza de a 50px scrolleando hacia abajo
+        // Se desplaza de a 120px scrolleando hacia arriba
+
         const targetScrollY = window.scrollY + scrollDistance;
 
         // Scroll suave con animación
@@ -92,23 +98,20 @@ function ScrollVideo() {
 
   return (
     <>
-      {/* Espacio anterior del scroll */}
-      <div
+    <div id="slow-scroll-section" className="bg-black w-[100%] h-[100px]">
+      lorem
+    </div>
+      <canvas
+        
+        width={1000}
+        height={1000}
+        ref={ref}
         style={{
-          height: "700px",
-          width: "100%",
-          backgroundColor: "red",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column"
+          backgroundColor: "orange",
+          maxWidth: "100%", // Para evitar desbordamientos horizontales
+          maxHeight: "100%", // Para evitar desbordamientos verticales
         }}
-      >
-        {/* Sección donde aplicamos el scroll suave */}
-        <div id="slow-scroll-section" style={{ height: "700px", backgroundColor: "lightblue", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <canvas width={700} height={700} ref={ref} />
-        </div>
-      </div>
+      />
     </>
   );
 }
