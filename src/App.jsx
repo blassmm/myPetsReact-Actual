@@ -54,8 +54,8 @@ function App() {
           </div>
 
           <Section3 />
-          {/* <ScrollVideo />
-          <Slider /> */}
+          <ScrollVideo />
+          <Slider />
 
           {/* <div className="h-[40vh]">
             <Canvas>
