@@ -29,7 +29,9 @@ function App() {
 
     if (trackingId) {
       ReactGA.initialize(trackingId);
-      ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "App.tsx" });
+      ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "App.jsx" });
+    } else {
+        console.error("Google Analytics Tracking ID no está configurado correctamente.");
     }
   }, []);
 
