@@ -57,13 +57,13 @@ function App() {
           <ScrollVideo />
           <Slider />
 
-          {/* <div className="h-[40vh]">
+          <div className="h-[40vh]">
             <Canvas>
               <Fiber />
             </Canvas>
           </div>
 
-          <div className="border-black">
+          {/* <div className="border-black">
             <GridTest />
           </div>
 
