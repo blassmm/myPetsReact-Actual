@@ -20,7 +20,6 @@
     "@react-three/fiber": "8.16",
     "@studio-freight/lenis": "^1.0.42",
     "firebase": "^11.0.2",
-    "framer-motion": "^12.4.9",
     "gsap": "^3.12.7",
     "inquirer": "^12.3.2",
     "lenis": "^1.2.0",
@@ -28,8 +27,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
-    "styled-components": "^6.1.13",
-    "swiper": "^11.2.4",
+    "react-ga4": "^2.1.0",
     "three": "^0.166.1",
     "use-scramble": "^2.2.15"
   },

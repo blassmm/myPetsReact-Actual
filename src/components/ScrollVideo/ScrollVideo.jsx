@@ -1,14 +1,14 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from 'lenis'
-
+import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function ScrollVideo() {
   let totalImages = 86;
   const ref = useRef(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false); // Estado para controlar la carga de imágenes
 
   // Cargar las imágenes de forma perezosa
   const images = useMemo(() => {
@@ -16,14 +16,21 @@ function ScrollVideo() {
     for (let i = 1; i <= totalImages; i++) {
       const img = new Image();
       img.src = `/resources/videoImages/${i}.webp`;
+      img.onload = () => {
+        if (i === totalImages) {
+          setImagesLoaded(true); // Setear como cargadas una vez que todas las imágenes se hayan cargado
+        }
+      };
       loadedImages.push(img);
     }
     return loadedImages;
   }, []);
 
   const render = (index) => {
-    if (images[index - 1]) {
-      ref.current?.getContext("2d")?.drawImage(images[index - 1], 0, 0);
+    const context = ref.current?.getContext("2d");
+    if (context && images[index - 1]) {
+      context.clearRect(0, 0, ref.current.width, ref.current.height); // Limpiar el canvas antes de dibujar
+      context.drawImage(images[index - 1], 0, 0); // Dibujar la imagen
     }
   };
 
@@ -46,6 +53,17 @@ function ScrollVideo() {
       lenis.destroy(); // Limpiar Lenis cuando el componente se desmonte
     };
   }, []);
+
+  // Cargar la primera imagen al inicio (independientemente del scroll)
+  useEffect(() => {
+    if (imagesLoaded && images[0] && ref.current) {
+      const context = ref.current.getContext("2d");
+      if (context) {
+        context.clearRect(0, 0, ref.current.width, ref.current.height); // Limpiar canvas
+        context.drawImage(images[0], 0, 0); // Dibujar la primera imagen
+      }
+    }
+  }, [imagesLoaded, images]); // Dependencia en imagesLoaded para asegurar que las imágenes estén listas
 
   // Configuración de ScrollTrigger con GSAP
   useEffect(() => {
@@ -70,20 +88,19 @@ function ScrollVideo() {
   }, [images]);
 
   return (
-
-      <canvas
-        width={1000}
-        height={714}
-        ref={ref}
-        style={{
-          backgroundColor: "purple",
-          maxWidth: "100%",
-          maxHeight: "100%",
-          display: "flex",
-          justifyContent:"center",
-          alignItems:"center"
-        }}
-      />
+    <canvas
+      width={1000}
+      height={714}
+      ref={ref}
+      style={{
+        backgroundColor: "purple",
+        maxWidth: "100%",
+        maxHeight: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    />
   );
 }
 
