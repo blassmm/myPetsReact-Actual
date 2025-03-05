@@ -9,8 +9,9 @@ import Section1 from "./components/Section1/Section1";
 import Section2 from "./components/Section2/Section2";
 
 //React three fiber
-import { Canvas } from "@react-three/fiber";
-import Fiber from "./components/R3F/Fiber.jsx";
+// import { Canvas } from "@react-three/fiber";
+// import Fiber from "./components/R3F/Fiber.jsx";
+
 
 // import GridTest from "./components/GridTest/GridTest";
 // import GridTest2 from "./components/GridTest2/GridTest2";
@@ -57,14 +58,14 @@ function App() {
           </div>
 
           <Section3 />
-          <ScrollVideo />
-          <Slider />
+          {/* <ScrollVideo />
+          <Slider /> */}
 
-          <div className="h-[40vh]">
+          {/* <div className="h-[40vh]">
             <Canvas>
               <Fiber />
             </Canvas>
-          </div>
+          </div> */}
 
           {/* <div className="border-black">
             <GridTest />
