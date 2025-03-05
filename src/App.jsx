@@ -10,7 +10,7 @@ import Section2 from "./components/Section2/Section2";
 
 //React three fiber
 import { Canvas } from "@react-three/fiber";
-import Fiber from "./components/R3F/fiber";
+import Fiber from "./components/R3F/Fiber.jsx";
 
 // import GridTest from "./components/GridTest/GridTest";
 // import GridTest2 from "./components/GridTest2/GridTest2";
