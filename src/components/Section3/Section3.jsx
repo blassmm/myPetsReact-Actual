@@ -11,11 +11,14 @@ import "./_section3.css";
 
 import bgVector from "../../resources/bg-vector.png";
 import ClickIcon from "../../resources/click-icon.png";
+import { useRescuesStore } from "../../store";
 
 const Section3 = () => {
 
+  const rescates = useRescuesStore((state) => state.rescates);
+
   const { ref } = useScramble({
-    text: '+5.000',
+    text: rescates,
     speed: 0.3,
     tick: 1,
     step: 1,
