@@ -2,5 +2,5 @@
 /*    /index.html   200
 
 # Redirección de HTTP a HTTPS
-http://mypets.com/* https://www.mypets.com/:splat 301!
-http://www.mypets.com/* https://www.mypets.com/:splat 301! 
+http://mypetsapp.com/* https://mypetsapp.com/:splat 301!
+http://www.mypetsapp.com/* https://mypetsapp.com/:splat 301! 

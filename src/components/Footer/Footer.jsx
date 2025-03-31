@@ -81,8 +81,8 @@ const Footer = () => {
           "@context": "https://schema.org",
           "@type": "PetStore",
           name: "My Pets",
-          url: "https://www.mypets.com",
-          logo: "https://www.mypets.com/resources/logo-mobile.png",
+          url: "https://mypetsapp.com",
+          logo: "https://mypetsapp.com/resources/logo-mobile.png",
           sameAs: [
             "https://www.facebook.com/mypets",
             "https://www.instagram.com/mypets",
@@ -97,7 +97,7 @@ const Footer = () => {
             addressCountry: "ES",
           },
           telephone: "+34 123 456 789",
-          email: "info@mypets.com",
+          email: "info@mypetsapp.com",
           openingHoursSpecification: [
             {
               "@type": "OpeningHoursSpecification",

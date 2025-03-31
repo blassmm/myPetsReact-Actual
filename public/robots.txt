@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.mypets.com/sitemap.xml 
+Sitemap: https://mypetsapp.com/sitemap.xml 
