@@ -1,0 +1,6 @@
+# Redireccionamientos para SPA
+/*    /index.html   200
+
+# Redirección de HTTP a HTTPS
+http://mypets.com/* https://www.mypets.com/:splat 301!
+http://www.mypets.com/* https://www.mypets.com/:splat 301! 

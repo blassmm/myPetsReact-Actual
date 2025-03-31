@@ -12,7 +12,6 @@ import Section2 from "./components/Section2/Section2";
 // import { Canvas } from "@react-three/fiber";
 // import Fiber from "./components/R3F/Fiber.jsx";
 
-
 // import GridTest from "./components/GridTest/GridTest";
 // import GridTest2 from "./components/GridTest2/GridTest2";
 import Section3 from "./components/Section3/Section3";
@@ -23,15 +22,30 @@ import bgVector from "./resources/bg-vector.png";
 import ReactGA from "react-ga4";
 
 function App() {
-  
   useEffect(() => {
     const trackingId = import.meta.env.VITE_GA_TRACKING_ID;
 
     if (trackingId) {
+      // Inicializar Google Analytics
       ReactGA.initialize(trackingId);
-      ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "App.jsx" });
+
+      // Registrar la vista de página con más información para SEO
+      ReactGA.send({
+        hitType: "pageview",
+        page: window.location.pathname,
+        title: "My Pets - Encuentra a tu peludo",
+      });
+
+      // Track additional SEO relevant events
+      ReactGA.event({
+        category: "User Engagement",
+        action: "App Loaded",
+        label: "Initial Load",
+      });
     } else {
-        console.error("Google Analytics Tracking ID no está configurado correctamente.");
+      console.error(
+        "Google Analytics Tracking ID no está configurado correctamente."
+      );
     }
   }, []);
 

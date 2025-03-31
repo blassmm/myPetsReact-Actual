@@ -1,0 +1,21 @@
+{
+  "name": "My Pets - Servicios de Cuidado para Mascotas",
+  "short_name": "My Pets",
+  "description": "My Pets ofrece servicios profesionales de cuidado para mascotas, veterinaria, alimentación y accesorios para tus animales.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A90E2",
+  "icons": [
+    {
+      "src": "/resources/logo.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/resources/logo-dark.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
