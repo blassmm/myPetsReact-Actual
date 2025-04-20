@@ -27,48 +27,15 @@ const Footer = () => {
 
   return (
     <footer className="relative z-99">
-      {isMobile ? (
+      {/* {isMobile ? (
         <FooterViewMobile {...icons} LogoImage={LogoImage} />
       ) : (
         <FooterViewResponsive {...icons} LogoImage={LogoImage} />
-      )}
+      )} */}
 
-      <div className="py-4 text-center">
-        <nav aria-label="Footer Navigation" className="mb-4">
-          <ul className="flex flex-wrap justify-center gap-4 text-sm">
-            <li>
-              <a href="/nosotros" className="hover:underline">
-                Nosotros
-              </a>
-            </li>
-            <li>
-              <a href="/servicios" className="hover:underline">
-                Servicios
-              </a>
-            </li>
-            <li>
-              <a href="/productos" className="hover:underline">
-                Productos
-              </a>
-            </li>
-            <li>
-              <a href="/contacto" className="hover:underline">
-                Contacto
-              </a>
-            </li>
-            <li>
-              <a href="/politica-privacidad" className="hover:underline">
-                Política de Privacidad
-              </a>
-            </li>
-            <li>
-              <a href="/terminos-condiciones" className="hover:underline">
-                Términos y Condiciones
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+<FooterViewMobile {...icons} LogoImage={LogoImage} />
+
+    
 
       <hr />
       <p className="copyright">
